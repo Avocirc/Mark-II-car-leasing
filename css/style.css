@@ -580,6 +580,40 @@ Transmite width din browser */
   .menu__btn{
     display: flex;
   }
+  .menu__btn,
+  .logo{
+    /* Pentru ca elementele sa fie acolo unde sunt */
+    position: relative;
+    z-index: 25;
+  }
+  .menu__list{
+    /* Pentru nu incurca altor elemente*/
+    position: absolute;
+    /* Pentru al ridica peste restul elementelor care sunt si pot fi */
+    z-index: 5;
+    /* Culoarea pe fundal */
+    background-color: #151515;
+    /* Le setam pentru a fi in coloane */
+    flex-direction: column;
+    /* Le intindem la maxim */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Lasam spatiu 200 pentru logo si button */
+    padding-top: 200px;
+    /* Am setat inaltimea 100vh pentru a fi maxima pe orice ecran */
+    height: 100vh;
+    align-items: center;
+    /* Pentru a ascunde meniul */
+    transform: translateY(-100%);
+    /* Am adaugat animatia doar pentru transform */
+    transition: transform .3s ease;
+  }
+  .menu__list.menu__list--active{
+    /* Cand se apasa buttonul meniul trebuie sa apara */
+    transform: translateY(0%);
+  }
   .why-lease__list{
     grid-template-columns:repeat(2,1fr);
     gap: 20px;
